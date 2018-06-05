@@ -1,0 +1,1387 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 10300.17.0728.2252                               -->
+<workbook original-version='10.3' source-build='10.3.2 (10300.17.0728.2252)' source-platform='win' version='10.3' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource caption='log_inf' inline='true' name='federated.04fntil02ha8po179oklw09pn4py' version='10.3'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='log_inf' name='textscan.1gkbx4z1myt3fj13raqdh17b5gwu'>
+            <connection class='textscan' directory='C:/Users/iiitb/Desktop' filename='log_inf.csv' password='' server='' />
+          </named-connection>
+          <named-connection caption='instruments' name='textscan.0cn6ajw1xzs7hp12q8vin14g47j9'>
+            <connection class='textscan' directory='C:/Users/iiitb/Desktop' filename='instruments.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <relation join='left' type='join'>
+          <clause type='join'>
+            <expression op='='>
+              <expression op='[log_inf.csv].[instrument_token]' />
+              <expression op='[instruments.csv].[instrument_token]' />
+            </expression>
+          </clause>
+          <relation connection='textscan.1gkbx4z1myt3fj13raqdh17b5gwu' name='log_inf.csv' table='[log_inf#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+              <column datatype='datetime' name='timestamp' ordinal='0' />
+              <column datatype='integer' name='instrument_token' ordinal='1' />
+              <column datatype='real' name='last_price' ordinal='2' />
+              <column datatype='integer' name='volume' ordinal='3' />
+              <column datatype='integer' name='sell_quantity' ordinal='4' />
+              <column datatype='integer' name='last_quantity' ordinal='5' />
+              <column datatype='real' name='change' ordinal='6' />
+              <column datatype='real' name='average_price ' ordinal='7' />
+              <column datatype='real' name='open' ordinal='8' />
+              <column datatype='real' name='high' ordinal='9' />
+              <column datatype='real' name='low' ordinal='10' />
+              <column datatype='real' name='close ' ordinal='11' />
+              <column datatype='real' name='depth_buy_price_0 ' ordinal='12' />
+              <column datatype='integer' name='depth_buy_orders_0 ' ordinal='13' />
+              <column datatype='integer' name='depth_buy_quantity_0 ' ordinal='14' />
+              <column datatype='real' name='depth_sell_price_0 ' ordinal='15' />
+              <column datatype='integer' name='depth_sell_orders_0 ' ordinal='16' />
+              <column datatype='integer' name='depth_sell_quantity_0 ' ordinal='17' />
+              <column datatype='real' name='depth_buy_price_1 ' ordinal='18' />
+              <column datatype='integer' name='depth_buy_orders_1 ' ordinal='19' />
+              <column datatype='integer' name='depth_buy_quantity_1 ' ordinal='20' />
+              <column datatype='real' name='depth_sell_price_1 ' ordinal='21' />
+              <column datatype='integer' name='depth_sell_orders_1 ' ordinal='22' />
+              <column datatype='integer' name='depth_sell_quantity_1 ' ordinal='23' />
+              <column datatype='real' name='depth_buy_price_2 ' ordinal='24' />
+              <column datatype='integer' name='depth_buy_orders_2 ' ordinal='25' />
+              <column datatype='integer' name='depth_buy_quantity_2 ' ordinal='26' />
+              <column datatype='real' name='depth_sell_price_2 ' ordinal='27' />
+              <column datatype='integer' name='depth_sell_orders_2 ' ordinal='28' />
+              <column datatype='integer' name='depth_sell_quantity_2 ' ordinal='29' />
+              <column datatype='real' name='depth_buy_price_3 ' ordinal='30' />
+              <column datatype='integer' name='depth_buy_orders_3 ' ordinal='31' />
+              <column datatype='integer' name='depth_buy_quantity_3 ' ordinal='32' />
+              <column datatype='real' name='depth_sell_price_3 ' ordinal='33' />
+              <column datatype='integer' name='depth_sell_orders_3 ' ordinal='34' />
+              <column datatype='integer' name='depth_sell_quantity_3 ' ordinal='35' />
+              <column datatype='real' name='depth_buy_price_4 ' ordinal='36' />
+              <column datatype='integer' name='depth_buy_orders_4 ' ordinal='37' />
+              <column datatype='integer' name='depth_buy_quantity_4 ' ordinal='38' />
+              <column datatype='real' name='depth_sell_price_4 ' ordinal='39' />
+              <column datatype='integer' name='depth_sell_orders_4 ' ordinal='40' />
+              <column datatype='integer' name='depth_sell_quantity_4 ' ordinal='41' />
+            </columns>
+          </relation>
+          <relation connection='textscan.0cn6ajw1xzs7hp12q8vin14g47j9' name='instruments.csv' table='[instruments#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+              <column datatype='integer' name='instrument_token' ordinal='0' />
+              <column datatype='integer' name='exchange_token' ordinal='1' />
+              <column datatype='string' name='tradingsymbol' ordinal='2' />
+              <column datatype='string' name='name' ordinal='3' />
+              <column datatype='real' name='last_price' ordinal='4' />
+              <column datatype='date' name='expiry' ordinal='5' />
+              <column datatype='real' name='strike' ordinal='6' />
+              <column datatype='real' name='tick_size' ordinal='7' />
+              <column datatype='integer' name='lot_size' ordinal='8' />
+              <column datatype='string' name='instrument_type' ordinal='9' />
+              <column datatype='string' name='segment' ordinal='10' />
+              <column datatype='string' name='exchange' ordinal='11' />
+            </columns>
+          </relation>
+        </relation>
+        <cols>
+          <map key='[average_price ]' value='[log_inf.csv].[average_price ]' />
+          <map key='[change]' value='[log_inf.csv].[change]' />
+          <map key='[close ]' value='[log_inf.csv].[close ]' />
+          <map key='[depth_buy_orders_0 ]' value='[log_inf.csv].[depth_buy_orders_0 ]' />
+          <map key='[depth_buy_orders_1 ]' value='[log_inf.csv].[depth_buy_orders_1 ]' />
+          <map key='[depth_buy_orders_2 ]' value='[log_inf.csv].[depth_buy_orders_2 ]' />
+          <map key='[depth_buy_orders_3 ]' value='[log_inf.csv].[depth_buy_orders_3 ]' />
+          <map key='[depth_buy_orders_4 ]' value='[log_inf.csv].[depth_buy_orders_4 ]' />
+          <map key='[depth_buy_price_0 ]' value='[log_inf.csv].[depth_buy_price_0 ]' />
+          <map key='[depth_buy_price_1 ]' value='[log_inf.csv].[depth_buy_price_1 ]' />
+          <map key='[depth_buy_price_2 ]' value='[log_inf.csv].[depth_buy_price_2 ]' />
+          <map key='[depth_buy_price_3 ]' value='[log_inf.csv].[depth_buy_price_3 ]' />
+          <map key='[depth_buy_price_4 ]' value='[log_inf.csv].[depth_buy_price_4 ]' />
+          <map key='[depth_buy_quantity_0 ]' value='[log_inf.csv].[depth_buy_quantity_0 ]' />
+          <map key='[depth_buy_quantity_1 ]' value='[log_inf.csv].[depth_buy_quantity_1 ]' />
+          <map key='[depth_buy_quantity_2 ]' value='[log_inf.csv].[depth_buy_quantity_2 ]' />
+          <map key='[depth_buy_quantity_3 ]' value='[log_inf.csv].[depth_buy_quantity_3 ]' />
+          <map key='[depth_buy_quantity_4 ]' value='[log_inf.csv].[depth_buy_quantity_4 ]' />
+          <map key='[depth_sell_orders_0 ]' value='[log_inf.csv].[depth_sell_orders_0 ]' />
+          <map key='[depth_sell_orders_1 ]' value='[log_inf.csv].[depth_sell_orders_1 ]' />
+          <map key='[depth_sell_orders_2 ]' value='[log_inf.csv].[depth_sell_orders_2 ]' />
+          <map key='[depth_sell_orders_3 ]' value='[log_inf.csv].[depth_sell_orders_3 ]' />
+          <map key='[depth_sell_orders_4 ]' value='[log_inf.csv].[depth_sell_orders_4 ]' />
+          <map key='[depth_sell_price_0 ]' value='[log_inf.csv].[depth_sell_price_0 ]' />
+          <map key='[depth_sell_price_1 ]' value='[log_inf.csv].[depth_sell_price_1 ]' />
+          <map key='[depth_sell_price_2 ]' value='[log_inf.csv].[depth_sell_price_2 ]' />
+          <map key='[depth_sell_price_3 ]' value='[log_inf.csv].[depth_sell_price_3 ]' />
+          <map key='[depth_sell_price_4 ]' value='[log_inf.csv].[depth_sell_price_4 ]' />
+          <map key='[depth_sell_quantity_0 ]' value='[log_inf.csv].[depth_sell_quantity_0 ]' />
+          <map key='[depth_sell_quantity_1 ]' value='[log_inf.csv].[depth_sell_quantity_1 ]' />
+          <map key='[depth_sell_quantity_2 ]' value='[log_inf.csv].[depth_sell_quantity_2 ]' />
+          <map key='[depth_sell_quantity_3 ]' value='[log_inf.csv].[depth_sell_quantity_3 ]' />
+          <map key='[depth_sell_quantity_4 ]' value='[log_inf.csv].[depth_sell_quantity_4 ]' />
+          <map key='[exchange]' value='[instruments.csv].[exchange]' />
+          <map key='[exchange_token]' value='[instruments.csv].[exchange_token]' />
+          <map key='[expiry]' value='[instruments.csv].[expiry]' />
+          <map key='[high]' value='[log_inf.csv].[high]' />
+          <map key='[instrument_token (instruments.csv)]' value='[instruments.csv].[instrument_token]' />
+          <map key='[instrument_token]' value='[log_inf.csv].[instrument_token]' />
+          <map key='[instrument_type]' value='[instruments.csv].[instrument_type]' />
+          <map key='[last_price (instruments.csv)]' value='[instruments.csv].[last_price]' />
+          <map key='[last_price]' value='[log_inf.csv].[last_price]' />
+          <map key='[last_quantity]' value='[log_inf.csv].[last_quantity]' />
+          <map key='[lot_size]' value='[instruments.csv].[lot_size]' />
+          <map key='[low]' value='[log_inf.csv].[low]' />
+          <map key='[name]' value='[instruments.csv].[name]' />
+          <map key='[open]' value='[log_inf.csv].[open]' />
+          <map key='[segment]' value='[instruments.csv].[segment]' />
+          <map key='[sell_quantity]' value='[log_inf.csv].[sell_quantity]' />
+          <map key='[strike]' value='[instruments.csv].[strike]' />
+          <map key='[tick_size]' value='[instruments.csv].[tick_size]' />
+          <map key='[timestamp]' value='[log_inf.csv].[timestamp]' />
+          <map key='[tradingsymbol]' value='[instruments.csv].[tradingsymbol]' />
+          <map key='[volume]' value='[log_inf.csv].[volume]' />
+        </cols>
+        <metadata-records>
+          <metadata-record class='column'>
+            <remote-name>timestamp</remote-name>
+            <remote-type>135</remote-type>
+            <local-name>[timestamp]</local-name>
+            <parent-name>[log_inf.csv]</parent-name>
+            <remote-alias>timestamp</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>datetime</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;datetime&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>instrument_token</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[instrument_token]</local-name>
+            <parent-name>[log_inf.csv]</parent-name>
+            <remote-alias>instrument_token</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;sint64&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>last_price</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[last_price]</local-name>
+            <parent-name>[log_inf.csv]</parent-name>
+            <remote-alias>last_price</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;double&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>volume</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[volume]</local-name>
+            <parent-name>[log_inf.csv]</parent-name>
+            <remote-alias>volume</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;sint64&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>sell_quantity</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[sell_quantity]</local-name>
+            <parent-name>[log_inf.csv]</parent-name>
+            <remote-alias>sell_quantity</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;sint64&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>last_quantity</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[last_quantity]</local-name>
+            <parent-name>[log_inf.csv]</parent-name>
+            <remote-alias>last_quantity</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;sint64&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>change</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[change]</local-name>
+            <parent-name>[log_inf.csv]</parent-name>
+            <remote-alias>change</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;double&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>average_price </remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[average_price ]</local-name>
+            <parent-name>[log_inf.csv]</parent-name>
+            <remote-alias>average_price </remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;double&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>open</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[open]</local-name>
+            <parent-name>[log_inf.csv]</parent-name>
+            <remote-alias>open</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;double&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>high</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[high]</local-name>
+            <parent-name>[log_inf.csv]</parent-name>
+            <remote-alias>high</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;double&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>low</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[low]</local-name>
+            <parent-name>[log_inf.csv]</parent-name>
+            <remote-alias>low</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;double&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>close </remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[close ]</local-name>
+            <parent-name>[log_inf.csv]</parent-name>
+            <remote-alias>close </remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;double&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>depth_buy_price_0 </remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[depth_buy_price_0 ]</local-name>
+            <parent-name>[log_inf.csv]</parent-name>
+            <remote-alias>depth_buy_price_0 </remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;double&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>depth_buy_orders_0 </remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[depth_buy_orders_0 ]</local-name>
+            <parent-name>[log_inf.csv]</parent-name>
+            <remote-alias>depth_buy_orders_0 </remote-alias>
+            <ordinal>13</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;sint64&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>depth_buy_quantity_0 </remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[depth_buy_quantity_0 ]</local-name>
+            <parent-name>[log_inf.csv]</parent-name>
+            <remote-alias>depth_buy_quantity_0 </remote-alias>
+            <ordinal>14</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;sint64&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>depth_sell_price_0 </remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[depth_sell_price_0 ]</local-name>
+            <parent-name>[log_inf.csv]</parent-name>
+            <remote-alias>depth_sell_price_0 </remote-alias>
+            <ordinal>15</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;double&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>depth_sell_orders_0 </remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[depth_sell_orders_0 ]</local-name>
+            <parent-name>[log_inf.csv]</parent-name>
+            <remote-alias>depth_sell_orders_0 </remote-alias>
+            <ordinal>16</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;sint64&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>depth_sell_quantity_0 </remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[depth_sell_quantity_0 ]</local-name>
+            <parent-name>[log_inf.csv]</parent-name>
+            <remote-alias>depth_sell_quantity_0 </remote-alias>
+            <ordinal>17</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;sint64&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>depth_buy_price_1 </remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[depth_buy_price_1 ]</local-name>
+            <parent-name>[log_inf.csv]</parent-name>
+            <remote-alias>depth_buy_price_1 </remote-alias>
+            <ordinal>18</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;double&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>depth_buy_orders_1 </remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[depth_buy_orders_1 ]</local-name>
+            <parent-name>[log_inf.csv]</parent-name>
+            <remote-alias>depth_buy_orders_1 </remote-alias>
+            <ordinal>19</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;sint64&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>depth_buy_quantity_1 </remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[depth_buy_quantity_1 ]</local-name>
+            <parent-name>[log_inf.csv]</parent-name>
+            <remote-alias>depth_buy_quantity_1 </remote-alias>
+            <ordinal>20</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;sint64&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>depth_sell_price_1 </remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[depth_sell_price_1 ]</local-name>
+            <parent-name>[log_inf.csv]</parent-name>
+            <remote-alias>depth_sell_price_1 </remote-alias>
+            <ordinal>21</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;double&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>depth_sell_orders_1 </remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[depth_sell_orders_1 ]</local-name>
+            <parent-name>[log_inf.csv]</parent-name>
+            <remote-alias>depth_sell_orders_1 </remote-alias>
+            <ordinal>22</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;sint64&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>depth_sell_quantity_1 </remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[depth_sell_quantity_1 ]</local-name>
+            <parent-name>[log_inf.csv]</parent-name>
+            <remote-alias>depth_sell_quantity_1 </remote-alias>
+            <ordinal>23</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;sint64&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>depth_buy_price_2 </remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[depth_buy_price_2 ]</local-name>
+            <parent-name>[log_inf.csv]</parent-name>
+            <remote-alias>depth_buy_price_2 </remote-alias>
+            <ordinal>24</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;double&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>depth_buy_orders_2 </remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[depth_buy_orders_2 ]</local-name>
+            <parent-name>[log_inf.csv]</parent-name>
+            <remote-alias>depth_buy_orders_2 </remote-alias>
+            <ordinal>25</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;sint64&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>depth_buy_quantity_2 </remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[depth_buy_quantity_2 ]</local-name>
+            <parent-name>[log_inf.csv]</parent-name>
+            <remote-alias>depth_buy_quantity_2 </remote-alias>
+            <ordinal>26</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;sint64&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>depth_sell_price_2 </remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[depth_sell_price_2 ]</local-name>
+            <parent-name>[log_inf.csv]</parent-name>
+            <remote-alias>depth_sell_price_2 </remote-alias>
+            <ordinal>27</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;double&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>depth_sell_orders_2 </remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[depth_sell_orders_2 ]</local-name>
+            <parent-name>[log_inf.csv]</parent-name>
+            <remote-alias>depth_sell_orders_2 </remote-alias>
+            <ordinal>28</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;sint64&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>depth_sell_quantity_2 </remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[depth_sell_quantity_2 ]</local-name>
+            <parent-name>[log_inf.csv]</parent-name>
+            <remote-alias>depth_sell_quantity_2 </remote-alias>
+            <ordinal>29</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;sint64&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>depth_buy_price_3 </remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[depth_buy_price_3 ]</local-name>
+            <parent-name>[log_inf.csv]</parent-name>
+            <remote-alias>depth_buy_price_3 </remote-alias>
+            <ordinal>30</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;double&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>depth_buy_orders_3 </remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[depth_buy_orders_3 ]</local-name>
+            <parent-name>[log_inf.csv]</parent-name>
+            <remote-alias>depth_buy_orders_3 </remote-alias>
+            <ordinal>31</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;sint64&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>depth_buy_quantity_3 </remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[depth_buy_quantity_3 ]</local-name>
+            <parent-name>[log_inf.csv]</parent-name>
+            <remote-alias>depth_buy_quantity_3 </remote-alias>
+            <ordinal>32</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;sint64&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>depth_sell_price_3 </remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[depth_sell_price_3 ]</local-name>
+            <parent-name>[log_inf.csv]</parent-name>
+            <remote-alias>depth_sell_price_3 </remote-alias>
+            <ordinal>33</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;double&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>depth_sell_orders_3 </remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[depth_sell_orders_3 ]</local-name>
+            <parent-name>[log_inf.csv]</parent-name>
+            <remote-alias>depth_sell_orders_3 </remote-alias>
+            <ordinal>34</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;sint64&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>depth_sell_quantity_3 </remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[depth_sell_quantity_3 ]</local-name>
+            <parent-name>[log_inf.csv]</parent-name>
+            <remote-alias>depth_sell_quantity_3 </remote-alias>
+            <ordinal>35</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;sint64&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>depth_buy_price_4 </remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[depth_buy_price_4 ]</local-name>
+            <parent-name>[log_inf.csv]</parent-name>
+            <remote-alias>depth_buy_price_4 </remote-alias>
+            <ordinal>36</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;double&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>depth_buy_orders_4 </remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[depth_buy_orders_4 ]</local-name>
+            <parent-name>[log_inf.csv]</parent-name>
+            <remote-alias>depth_buy_orders_4 </remote-alias>
+            <ordinal>37</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;sint64&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>depth_buy_quantity_4 </remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[depth_buy_quantity_4 ]</local-name>
+            <parent-name>[log_inf.csv]</parent-name>
+            <remote-alias>depth_buy_quantity_4 </remote-alias>
+            <ordinal>38</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;sint64&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>depth_sell_price_4 </remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[depth_sell_price_4 ]</local-name>
+            <parent-name>[log_inf.csv]</parent-name>
+            <remote-alias>depth_sell_price_4 </remote-alias>
+            <ordinal>39</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;double&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>depth_sell_orders_4 </remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[depth_sell_orders_4 ]</local-name>
+            <parent-name>[log_inf.csv]</parent-name>
+            <remote-alias>depth_sell_orders_4 </remote-alias>
+            <ordinal>40</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;sint64&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>depth_sell_quantity_4 </remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[depth_sell_quantity_4 ]</local-name>
+            <parent-name>[log_inf.csv]</parent-name>
+            <remote-alias>depth_sell_quantity_4 </remote-alias>
+            <ordinal>41</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;sint64&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[log_inf.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>instrument_token</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[instrument_token (instruments.csv)]</local-name>
+            <parent-name>[instruments.csv]</parent-name>
+            <remote-alias>instrument_token</remote-alias>
+            <ordinal>42</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;sint64&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>exchange_token</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[exchange_token]</local-name>
+            <parent-name>[instruments.csv]</parent-name>
+            <remote-alias>exchange_token</remote-alias>
+            <ordinal>43</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;sint64&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>tradingsymbol</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[tradingsymbol]</local-name>
+            <parent-name>[instruments.csv]</parent-name>
+            <remote-alias>tradingsymbol</remote-alias>
+            <ordinal>44</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteCollation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='DebugRemoteMetadata (compression)'>&quot;heap&quot;</attribute>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>4294967292</attribute>
+              <attribute datatype='integer' name='DebugRemoteMetadata (storagewidth)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;str&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>name</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[name]</local-name>
+            <parent-name>[instruments.csv]</parent-name>
+            <remote-alias>name</remote-alias>
+            <ordinal>45</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteCollation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='DebugRemoteMetadata (compression)'>&quot;heap&quot;</attribute>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>4294967292</attribute>
+              <attribute datatype='integer' name='DebugRemoteMetadata (storagewidth)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;str&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>last_price</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[last_price (instruments.csv)]</local-name>
+            <parent-name>[instruments.csv]</parent-name>
+            <remote-alias>last_price</remote-alias>
+            <ordinal>46</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;double&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>expiry</remote-name>
+            <remote-type>133</remote-type>
+            <local-name>[expiry]</local-name>
+            <parent-name>[instruments.csv]</parent-name>
+            <remote-alias>expiry</remote-alias>
+            <ordinal>47</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>4</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;date&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>strike</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[strike]</local-name>
+            <parent-name>[instruments.csv]</parent-name>
+            <remote-alias>strike</remote-alias>
+            <ordinal>48</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;double&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>tick_size</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[tick_size]</local-name>
+            <parent-name>[instruments.csv]</parent-name>
+            <remote-alias>tick_size</remote-alias>
+            <ordinal>49</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;double&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>lot_size</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[lot_size]</local-name>
+            <parent-name>[instruments.csv]</parent-name>
+            <remote-alias>lot_size</remote-alias>
+            <ordinal>50</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;sint64&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>instrument_type</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[instrument_type]</local-name>
+            <parent-name>[instruments.csv]</parent-name>
+            <remote-alias>instrument_type</remote-alias>
+            <ordinal>51</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteCollation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='DebugRemoteMetadata (compression)'>&quot;heap&quot;</attribute>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>4294967292</attribute>
+              <attribute datatype='integer' name='DebugRemoteMetadata (storagewidth)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;str&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>segment</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[segment]</local-name>
+            <parent-name>[instruments.csv]</parent-name>
+            <remote-alias>segment</remote-alias>
+            <ordinal>52</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteCollation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='DebugRemoteMetadata (compression)'>&quot;heap&quot;</attribute>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>4294967292</attribute>
+              <attribute datatype='integer' name='DebugRemoteMetadata (storagewidth)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;str&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>exchange</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[exchange]</local-name>
+            <parent-name>[instruments.csv]</parent-name>
+            <remote-alias>exchange</remote-alias>
+            <ordinal>53</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteCollation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='DebugRemoteMetadata (compression)'>&quot;heap&quot;</attribute>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>4294967292</attribute>
+              <attribute datatype='integer' name='DebugRemoteMetadata (storagewidth)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;str&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[instruments.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
+        <calculation class='tableau' formula='1' />
+      </column>
+      <column caption='Average Price' datatype='real' name='[average_price ]' role='measure' type='quantitative' />
+      <column caption='Change' datatype='real' name='[change]' role='measure' type='quantitative' />
+      <column caption='Close' datatype='real' name='[close ]' role='measure' type='quantitative' />
+      <column caption='Depth Buy Orders 0' datatype='integer' name='[depth_buy_orders_0 ]' role='measure' type='quantitative' />
+      <column caption='Depth Buy Orders 1' datatype='integer' name='[depth_buy_orders_1 ]' role='measure' type='quantitative' />
+      <column caption='Depth Buy Orders 2' datatype='integer' name='[depth_buy_orders_2 ]' role='measure' type='quantitative' />
+      <column caption='Depth Buy Orders 3' datatype='integer' name='[depth_buy_orders_3 ]' role='measure' type='quantitative' />
+      <column caption='Depth Buy Orders 4' datatype='integer' name='[depth_buy_orders_4 ]' role='measure' type='quantitative' />
+      <column caption='Depth Buy Price 0' datatype='real' name='[depth_buy_price_0 ]' role='measure' type='quantitative' />
+      <column caption='Depth Buy Price 1' datatype='real' name='[depth_buy_price_1 ]' role='measure' type='quantitative' />
+      <column caption='Depth Buy Price 2' datatype='real' name='[depth_buy_price_2 ]' role='measure' type='quantitative' />
+      <column caption='Depth Buy Price 3' datatype='real' name='[depth_buy_price_3 ]' role='measure' type='quantitative' />
+      <column caption='Depth Buy Price 4' datatype='real' name='[depth_buy_price_4 ]' role='measure' type='quantitative' />
+      <column caption='Depth Buy Quantity 0' datatype='integer' name='[depth_buy_quantity_0 ]' role='measure' type='quantitative' />
+      <column caption='Depth Buy Quantity 1' datatype='integer' name='[depth_buy_quantity_1 ]' role='measure' type='quantitative' />
+      <column caption='Depth Buy Quantity 2' datatype='integer' name='[depth_buy_quantity_2 ]' role='measure' type='quantitative' />
+      <column caption='Depth Buy Quantity 3' datatype='integer' name='[depth_buy_quantity_3 ]' role='measure' type='quantitative' />
+      <column caption='Depth Buy Quantity 4' datatype='integer' name='[depth_buy_quantity_4 ]' role='measure' type='quantitative' />
+      <column caption='Depth Sell Orders 0' datatype='integer' name='[depth_sell_orders_0 ]' role='measure' type='quantitative' />
+      <column caption='Depth Sell Orders 1' datatype='integer' name='[depth_sell_orders_1 ]' role='measure' type='quantitative' />
+      <column caption='Depth Sell Orders 2' datatype='integer' name='[depth_sell_orders_2 ]' role='measure' type='quantitative' />
+      <column caption='Depth Sell Orders 3' datatype='integer' name='[depth_sell_orders_3 ]' role='measure' type='quantitative' />
+      <column caption='Depth Sell Orders 4' datatype='integer' name='[depth_sell_orders_4 ]' role='measure' type='quantitative' />
+      <column caption='Depth Sell Price 0' datatype='real' name='[depth_sell_price_0 ]' role='measure' type='quantitative' />
+      <column caption='Depth Sell Price 1' datatype='real' name='[depth_sell_price_1 ]' role='measure' type='quantitative' />
+      <column caption='Depth Sell Price 2' datatype='real' name='[depth_sell_price_2 ]' role='measure' type='quantitative' />
+      <column caption='Depth Sell Price 3' datatype='real' name='[depth_sell_price_3 ]' role='measure' type='quantitative' />
+      <column caption='Depth Sell Price 4' datatype='real' name='[depth_sell_price_4 ]' role='measure' type='quantitative' />
+      <column caption='Depth Sell Quantity 0' datatype='integer' name='[depth_sell_quantity_0 ]' role='measure' type='quantitative' />
+      <column caption='Depth Sell Quantity 1' datatype='integer' name='[depth_sell_quantity_1 ]' role='measure' type='quantitative' />
+      <column caption='Depth Sell Quantity 2' datatype='integer' name='[depth_sell_quantity_2 ]' role='measure' type='quantitative' />
+      <column caption='Depth Sell Quantity 3' datatype='integer' name='[depth_sell_quantity_3 ]' role='measure' type='quantitative' />
+      <column caption='Depth Sell Quantity 4' datatype='integer' name='[depth_sell_quantity_4 ]' role='measure' type='quantitative' />
+      <column caption='Exchange' datatype='string' name='[exchange]' role='dimension' type='nominal' />
+      <column caption='Exchange Token' datatype='integer' name='[exchange_token]' role='measure' type='quantitative' />
+      <column caption='Expiry' datatype='date' name='[expiry]' role='dimension' type='ordinal' />
+      <column caption='High' datatype='real' name='[high]' role='measure' type='quantitative' />
+      <column caption='Instrument Token (Instruments.Csv)' datatype='integer' name='[instrument_token (instruments.csv)]' role='measure' type='quantitative' />
+      <column caption='Instrument Token' datatype='integer' name='[instrument_token]' role='measure' type='quantitative' />
+      <column caption='Instrument Type' datatype='string' name='[instrument_type]' role='dimension' type='nominal' />
+      <column caption='Last Price (Instruments.Csv)' datatype='real' name='[last_price (instruments.csv)]' role='measure' type='quantitative' />
+      <column caption='Last Price' datatype='real' name='[last_price]' role='measure' type='quantitative' />
+      <column caption='Last Quantity' datatype='integer' name='[last_quantity]' role='measure' type='quantitative' />
+      <column caption='Lot Size' datatype='integer' name='[lot_size]' role='measure' type='quantitative' />
+      <column caption='Low' datatype='real' name='[low]' role='measure' type='quantitative' />
+      <column caption='Name' datatype='string' name='[name]' role='dimension' type='nominal' />
+      <column caption='Open' datatype='real' name='[open]' role='measure' type='quantitative' />
+      <column caption='Segment' datatype='string' name='[segment]' role='dimension' type='nominal' />
+      <column caption='Sell Quantity' datatype='integer' name='[sell_quantity]' role='measure' type='quantitative' />
+      <column caption='Strike' datatype='real' name='[strike]' role='measure' type='quantitative' />
+      <column caption='Tick Size' datatype='real' name='[tick_size]' role='measure' type='quantitative' />
+      <column caption='Timestamp' datatype='datetime' name='[timestamp]' role='dimension' type='ordinal' />
+      <column caption='Tradingsymbol' datatype='string' name='[tradingsymbol]' role='dimension' type='nominal' />
+      <column caption='Volume' datatype='integer' name='[volume]' role='measure' type='quantitative' />
+      <layout dim-ordering='alphabetic' dim-percentage='0.603252' measure-ordering='alphabetic' measure-percentage='0.396748' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='Sheet 1'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='log_inf' name='federated.04fntil02ha8po179oklw09pn4py' />
+          </datasources>
+          <datasource-dependencies datasource='federated.04fntil02ha8po179oklw09pn4py'>
+            <column-instance column='[tradingsymbol]' derivation='None' name='[none:tradingsymbol:nk]' pivot='key' type='nominal' />
+            <column caption='Sell Quantity' datatype='integer' name='[sell_quantity]' role='measure' type='quantitative' />
+            <column-instance column='[sell_quantity]' derivation='Sum' name='[sum:sell_quantity:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[volume]' derivation='Sum' name='[sum:volume:qk]' pivot='key' type='quantitative' />
+            <column caption='Tradingsymbol' datatype='string' name='[tradingsymbol]' role='dimension' type='nominal' />
+            <column caption='Volume' datatype='integer' name='[volume]' role='measure' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.04fntil02ha8po179oklw09pn4py].[:Measure Names]'>
+            <groupfilter function='union' user:op='manual'>
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.04fntil02ha8po179oklw09pn4py].[sum:sell_quantity:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.04fntil02ha8po179oklw09pn4py].[sum:volume:qk]&quot;' />
+            </groupfilter>
+          </filter>
+          <slices>
+            <column>[federated.04fntil02ha8po179oklw09pn4py].[:Measure Names]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.04fntil02ha8po179oklw09pn4py].[:Measure Names]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.04fntil02ha8po179oklw09pn4py].[Multiple Values]</rows>
+        <cols>([federated.04fntil02ha8po179oklw09pn4py].[none:tradingsymbol:nk] / [federated.04fntil02ha8po179oklw09pn4py].[:Measure Names])</cols>
+      </table>
+    </worksheet>
+  </worksheets>
+  <windows source-height='30'>
+    <window class='worksheet' maximized='true' name='Sheet 1'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+            <card type='measures' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.04fntil02ha8po179oklw09pn4py].[:Measure Names]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.04fntil02ha8po179oklw09pn4py].[:Measure Names]</field>
+            <field>[federated.04fntil02ha8po179oklw09pn4py].[none:instrument_type:nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+    </window>
+  </windows>
+  <thumbnails>
+    <thumbnail height='192' name='Sheet 1' width='192'>
+      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
+      RU5ErkJggg==
+    </thumbnail>
+  </thumbnails>
+</workbook>
