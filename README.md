@@ -1,0 +1,2 @@
+# NSE-BSE-Stock-Market-Analysis
+Currently, to make any investment decision we are relying on stock brokers who provide us the current trends happening in the market which includes their opinions. Based on their inputs we invest/buy share. With our approach we can minimize the role of stock brokers. This helps users to know the trends in the market and also make unbiased decisions. Thus, by analyzing the given data we help investors, traders, companies to make buying and selling decisions in a way to gain edge in the market. 
